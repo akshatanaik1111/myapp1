@@ -1,14 +1,24 @@
 # Use official Python image
-FROM python:3.10
+# FROM python:3.10
 
 # Set working directory
-WORKDIR /app
+# WORKDIR /app
 
 # Copy files
-COPY . /app
+# COPY . /app
 
 # Install dependencies
-RUN pip install -r requirements.txt
+# RUN pip install -r requirements.txt
 
 # Run app
+# CMD ["python", "app.py"]
+
+FROM python:3.10
+
+WORKDIR /app
+COPY . /app
+
+RUN pip install -r requirements.txt
+
 CMD ["python", "app.py"]
+
