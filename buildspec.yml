@@ -1,13 +1,9 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo Installing...
   build:
     commands:
-      - echo Build started...
-      - echo Hello from CodeBuild
-  post_build:
-    commands:
-      - echo Build completed
+      - echo "Building Docker image"
+      - docker build -t myapp .
+      - echo "Running container"
+      - docker run myapp
